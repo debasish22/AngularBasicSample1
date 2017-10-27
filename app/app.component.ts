@@ -11,6 +11,6 @@ export class TitleComponent{
   name:string;
   constructor()
   {
-     this.name="Hello Wipro !!";
+     this.name="Hello World !!";
   }
 }
