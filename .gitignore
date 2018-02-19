@@ -61,3 +61,10 @@ typings/
 **/app/**/*.map
 
 
+# Ignore Compiled .map files from pushed into git
+**/dataBinding/**/*.js
+
+# Ignore Compiled .map files from pushed into git
+**/dataBinding/**/*.map
+
+
