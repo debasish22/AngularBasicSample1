@@ -8,9 +8,9 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${file}",
+            "program": "${workspaceRoot}/node_modules/lite-server/bin/lite-server",
             "outFiles": [
-                "${workspaceRoot}/app/**/*.js"
+                "${workspaceRoot}/app/*.js"
             ]
         },
         {
