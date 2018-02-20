@@ -2,6 +2,7 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
+<<<<<<< HEAD
     "tasks": [
         {
             "type": "typescript",
@@ -23,4 +24,38 @@
             "args": ["test.html"]
         }
     ]
+=======
+    "tasks":[{
+        "taskName":"CompileTypescript",
+        "command": "tsc",
+        "type": "shell", // shell or process for custom task.json file
+        "args": ["-w", "-p", "."],
+        "isBackground": true,
+        "problemMatcher":["$tsc-watch"],
+        "group":{
+            "kind": "build",
+            "isDefault": true
+        },
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "shared"
+        }
+       
+    },
+{
+"label":"Npm Installation",
+"script":"install",
+"type":"npm",
+"isBackground": true,
+"presentation": {
+    "echo": true,
+    "reveal": "always",
+    "focus": false,
+    "panel": "shared"
+}
+}]
+   
+>>>>>>> 907677354bb4670dc5ef88096d4e4b0bb4245660
 }
