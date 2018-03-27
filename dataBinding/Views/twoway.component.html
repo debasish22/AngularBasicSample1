@@ -1,0 +1,24 @@
+<h3 style="background:khaki">Using ngModel for 2 way binding</h3>
+<span>Enter value to see the change in second TextBox</span>
+<input [(ngModel)]="msg">
+<span>Enter value to see the change in first TextBox</span>
+<input [(ngModel)]="msg">
+
+<h3 style="background:khaki">Using ngModel as property and eventBinding</h3>
+<span>Enter value to see the change in second TextBox</span>
+<input [ngModel]="msg0" (ngModelChange)="msg0=$event">
+<span>Enter value to see the change in first TextBox</span>
+<input [ngModel]="msg0" (ngModelChange)="msg0=$event">
+
+<h3 style="background:khaki">WithOut ngModel  2 way binding</h3>
+<span>Enter value to see the change in second TextBox</span>
+<input [value]="msg1" (input)="msg1=$event.target.value">
+<span>Enter value to see the change in first TextBox</span>
+<input [value]="msg1" (input)="msg1=$event.target.value">
+
+
+<h3 style="background:khaki">Two way binding using bindon-</h3>
+<span>Enter value to see the change in second TextBox</span>
+<input bindon-ngModel="msg2">
+<span>Enter value to see the change in first TextBox</span>
+<input bindon-ngModel="msg2">

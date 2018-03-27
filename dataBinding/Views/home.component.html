@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default" style="background:ghostwhite;color:black">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">DataBinding</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/']">InterPolation</a></li>
+        <li><a [routerLink]="['/element']">ElementPropertyBinding</a></li>
+        <li><a [routerLink]="['/event']">EventBinding</a></li>
+        <li><a [routerLink]="['/twoway']">TwoWay Binding</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="outer-outlet">
+    <router-outlet></router-outlet>
+  </div>
+    
