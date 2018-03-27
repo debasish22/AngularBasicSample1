@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
     template: `
       <a [routerLink]="['/']">InterPolation</a>
       <a [routerLink]="['/element']">ElementPropertyBinding</a>
+      <a [routerLink]="['/event']">EventBinding</a>
       <div class="outer-outlet">
         <router-outlet></router-outlet>
       </div>

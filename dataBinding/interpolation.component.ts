@@ -4,5 +4,11 @@ import { Component } from '@angular/core';
   templateUrl: 'dataBinding/Views/interpolation.html'  
 })  
 export class InterPolationComponent {   
-    name = 'Angular 2/4 ';  
+    name = 'Angular 2/4/5 ';  
+constructor(){}
+    
+public  interPolationTest(): string{
+
+  return "Value from Function";
+}
 } 

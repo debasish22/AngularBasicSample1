@@ -1,19 +1,24 @@
-<h1>using Bracket[ ]</h1>
+<h3>Binding data to property using Bracket[ ]</h3>
 
 <img [src]="website.logo"/>
 <a [href]="website.url" [textContent]="website.name"> </a>
 <p [textContent]="website.description"> </p>
 <button [disabled]="flag">Submit</button>  
 
-<h1>using bind- </h1>
+<h3>Binding data to property using bind- </h3>
     
     <img bind-src="website.logo"/>
     <a bind-href="website.url" bind-textContent="website.name"> </a>
     <p  [ngClass]="'one two'" bind-textContent="website.description"> </p>
     <button bind-disabled="!flag">Submit</button> 
 
-<h1>using InterPolation</h1>
+<h3>Binding data to property using InterPolation</h3>
     
 <img src="{{website.logo}}"/>
 <a href="{{website.url}}" textContent="{{website.name}}"> </a>
 <p textContent="{{website.description}}"> </p>  
+
+<h3>Property Binding For ChildComponents</h3>
+<mychild bind-greeting="hi" [msg]="msgForChild"></mychild>
+
+
