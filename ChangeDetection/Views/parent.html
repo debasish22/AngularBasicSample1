@@ -1,0 +1,4 @@
+      <h1>{{myData.firstname}} {{myData.lastname}}</h1>
+      <button (click)="changeName()">Change name</button>
+
+      <child [passObjectTochild]="myData" [passStringTochild]="message"></child>
