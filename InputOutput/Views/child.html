@@ -1,8 +1,17 @@
+<div style="background:khaki">
+
+
 <h4>This is child component</h4>
 
-<span>Message from Parent</span>{{inputMessage}}<br>
+<span>Message from Parent: - </span><span style="color:red">{{inputMessage}}</span><br>
 
-<span>Enter First Number</span><input  [(ngModel)]="num1"/><br>
-<span>Enter second Number</span><input  [(ngModel)]="num2"/>
+<span>Enter First Number </span><input  [(ngModel)]="num1"/><br>
+<span>Enter second Number </span><input  [(ngModel)]="num2"/>
 
-<input type="button" (click)="addnumber()" value="Add">
+<input type="button" (click)="addnumber()" value="Add"><br>
+
+<span>@Input as getter and setter: -</span><span style="color:red">
+    {{message}}</span>
+
+
+</div>

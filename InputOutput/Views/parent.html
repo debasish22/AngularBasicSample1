@@ -1,4 +1,4 @@
 
-<inouthchild [msgForChild]="messageToChild" (outPutMsgFromChild)="showResult($event)"></inouthchild>
+<inouthchild [msgForChild]="messageToChild" [message]="messageToChild" (outPutMsgFromChild)="showResult($event)"></inouthchild>
 
 <span>The Result after addition is :</span><span style="background:red">{{result}}</span>
