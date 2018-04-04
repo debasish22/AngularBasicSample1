@@ -1,0 +1,34 @@
+<form novalidate (ngSubmit)="onSubmit(registerForm)" [formGroup]="registerForm">
+    
+    <label>Firstname:</label>
+    <input type="text" formControlName="firstname">
+    <div style="background:red" class="error" *ngIf="registerForm.get('firstname').hasError('required') && registerForm.get('firstname').touched">
+        first Name is required
+      </div>
+  
+    <label>Lastname:</label>
+    <input type="text" formControlName="lastname">
+    <div class="error" *ngIf="registerForm.get('lastname').hasError('required') && registerForm.get('lastname').touched">
+        Last Name is required
+      </div>
+    <fieldset formGroupName="address">
+
+    <label>Street:</label>
+    <input type="text" formControlName="street">
+  
+    <label>Zip:</label>
+    <input type="text" formControlName="zip">
+  
+    <label>City:</label>
+    <input type="text" formControlName="city">
+
+  </fieldset>
+    <button type="submit" [disabled]="registerForm.invalid">Submit</button>
+  </form>
+
+  {{registerForm.value | json}}
+
+
+  <p style="background:red">Two ways to get the Errors</p>
+  {{ registerForm.controls.firstname?.errors | json }}
+  {{ registerForm.get('firstname').errors | json }}
