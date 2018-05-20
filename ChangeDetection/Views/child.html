@@ -1,3 +1,11 @@
-Object from parent - {{data.firstname}}  -- {{data.lastname}}
-string from Parent - {{data1}}
-counter-{{counter}}
+<h4>Using Input Parameters</h4>
+<ul>
+    <li *ngFor="let item of data">{{ item }}</li>
+  </ul>
+
+  <input type="button" value="Refresh" (click)="refresh()">
+
+  <!-- <h4>Using Observable</h4>
+  <ul>
+    <li *ngFor="let item of cars">{{item}}</li>
+  </ul> -->

@@ -1,0 +1,36 @@
+<!-- http://www.agiratech.com/angular-4-template-driven-forms-building-validating/ -->
+<form (ngSubmit)="onSubmit(f.value)" #f="ngForm" novalidate>
+
+   <div>
+       <label>Name</label>
+    <input type="text" name="userName" ngModel #name="ngModel" required />
+   </div>
+   <div *ngIf="name.errors?.required && name.touched" class="error">
+    Name is required
+  </div>
+   <div>
+       <label>Email</label>
+        <input type="text" name="email" ngModel required />
+     
+   </div>
+      
+    <div>
+     <label>Age</label>
+    <input type="text" name="age" ngModel required />
+</div>
+   
+    <div ngModelGroup="address">
+      
+            <div>
+                    <label>Country</label>
+    <input type="text" name="country" ngModel required />
+            </div>
+            <div>
+                    <label>City</label>
+    <input type="text" name="city" ngModel required />
+</div>
+</div>
+<button [disabled]="f.invalid" type="submit">Submit</button>
+   </form>
+   
+   

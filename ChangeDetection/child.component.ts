@@ -1,36 +1,44 @@
-import { Component, Input, ChangeDetectionStrategy, OnInit, ChangeDetectorRef } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-
+import { Component, Input, ChangeDetectionStrategy, 
+  ChangeDetectorRef, OnInit ,
+  OnChanges, SimpleChanges, SimpleChange} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
-    selector:'child',
-    templateUrl:'ChangeDetection/Views/child.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
-  })
- export  class changeDetectionChildComponent implements OnInit{
-     
-   @Input('passObjectTochild') data:{firstname:string,lastname:string};
-   @Input('passStringTochild') data1:Observable<string>;
-   counter:number=0;
-    constructor(private cd: ChangeDetectorRef){
-       
-    }
+  selector: 'app-child',
+  templateUrl: 'ChangeDetection/Views/child.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 
-    ngOnInit(){
-      this.data1.subscribe(
-      (next)=>{
-        this.counter ++;
-        this.cd.markForCheck();
-        //console.log(next);
-      },
-      (error)=>{
-        console.log(error);
-      },
-      ()=>{
-        console.log("completed");
-      }
+})
+export class ChildComponent implements OnInit,OnChanges{
 
-      )}
+  @Input() data: string[];
+  //  @Input() obsrbdata:Observable<string[]>;
+  // mycars:string[]=[];
+
+  constructor(private cd:ChangeDetectorRef){ 
+    console.log(this.data);
     
-      
   }
+  
+  refresh(){
+    this.cd.detectChanges();
+    console.log(this.data);
+
+
+  }
+
+  ngOnChanges(changes:SimpleChanges){
+    //This is called before ngOnInit and whenever more one or more data bound properties change.
+const data:SimpleChange=changes.data;
+
+console.log(data.currentValue);
+console.log(data.previousValue)
+
+  }
+  ngOnInit(){
+    // this.obsrbdata.subscribe(car=>{
+    // this.mycars=[...this.mycars,...car];
+    // this.cd.markForCheck();
+    // })
+  }
+}
